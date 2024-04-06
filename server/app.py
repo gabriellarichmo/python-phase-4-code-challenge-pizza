@@ -67,8 +67,8 @@ class RestaurantPizzas(Resource):
             return new_rp.to_dict(), 201
         except Exception as e:
             db.session.rollback()
-            return {"error": str(e)}
-            # return {"errors": ["validation errors"]}, 400
+            # return {"error": str(e)}
+            return {"errors": ["validation errors"]}, 400
 
 
 api.add_resource(Restaurants, "/restaurants")
